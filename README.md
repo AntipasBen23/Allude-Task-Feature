@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Video Recorder with Local Backup - Feasibility Spike
 
-## Getting Started
+A proof-of-concept mobile web app that demonstrates video recording with automatic local device backup using IndexedDB. Videos persist even when uploads fail, proving that a native app is not required for this functionality.
 
-First, run the development server:
+##  Project Overview
 
+**Problem:** Currently, if a video upload fails (network loss, page refresh, tab closed), the recording can be lost because it is not persisted locally on the device.
+
+**Solution:** This web app proves that browsers can record video and store it locally using IndexedDB, ensuring videos survive upload failures without requiring a native app.
+
+##  Success Criteria Met
+
+This spike successfully demonstrates:
+
+1.  **Video recorded in a mobile browser** - Uses MediaRecorder API to capture video from device camera
+2.  **Upload is interrupted or fails** - Simulates network failures and upload errors
+3.  **Video is still present locally on device** - Videos persist in IndexedDB across page refreshes and tab closures
+
+##  Quick Start
+
+### Prerequisites
+- Node.js 18+ and npm
+- Modern browser (Chrome, Edge, Safari, Firefox)
+- Camera/microphone access
+
+### Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
